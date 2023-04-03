@@ -1,4 +1,4 @@
-
+// Controller with functions exported to routes
 
 const TodoLists = require('../models/todo_list')
 // function for redirecting to main home page
@@ -16,10 +16,10 @@ module.exports.home = function (req, res) {
     })
 }
 
-// Function for new Data
+// Function for fetching month string from number entered in UI
 function DateValue(dueDate) {
     // static value for implementing month value
-    let months = ['jan', 'feb', 'mar', 'Apr', 'May', 'june', 'july', 'aug', 'sept', 'oct', 'nov', 'dec'] 
+    let months = ['jan', 'feb', 'mar', 'Apr', 'May', 'june', 'july', 'aug', 'sept', 'oct', 'nov', 'dec']
     newdate = '';
     let monapp = '';
     // checking months 
@@ -90,12 +90,11 @@ module.exports.deleteTodo = function (req, res) {
 
 // function for fetching data for edit page
 module.exports.EditPage = function (req, res) {
-    // here we are fetching the data whic need to be edited
-    console.log('aaa', req.query)
+    // here we are fetching the data which needs to be edited
     TodoLists.findById(req.query.id, function (err, task) {
         if (err) { console.log('hi man!! it an error'); return }
         return res.render('editPage', {
-            title: 'Edit Item',
+            title: 'Edit Task',
             todolist: task
         })
     })

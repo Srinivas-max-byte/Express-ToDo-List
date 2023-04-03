@@ -10,15 +10,15 @@ app.use(expressLayout)
 const db = require('./config/mongoose')
 // const TodoLists = require('./models/todo_list')
 // Used to handle middleware here we are using express.urlencode to use the parser.
-app.use(express.urlencoded()) 
-app.use('/',require('./routes'))
+app.use(express.urlencoded())
+app.use('/', require('./routes'))
 app.use(express.static('./assets')) //for getting static
-app.set('layout extractStyles',true);
-app.set('layout extractScripts',true)
-app.set('view engine','ejs');
-app.set('views','./views')
-app.listen(port,function(err){
-    if(err){
+app.set('layout extractStyles', true)// for extracting CSS lines of code
+app.set('layout extractScripts', true)// for extracting js lines of code
+app.set('view engine', 'ejs');
+app.set('views', './views')
+app.listen(port, function (err) {
+    if (err) {
         console.log(`error in running the ${port}`)
         return;
     }
