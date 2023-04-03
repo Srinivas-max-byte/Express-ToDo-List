@@ -1,4 +1,5 @@
 ToDo List app made with MongoDb as database using mongoose ODM, having frontend and backend in Node.js
+For Innovation I have added edit task option.
 Used router and controller for scalable directory structure for routing requests to action items and functions.
 Views for rendering the html on UI. Used layouts for code reusability.
 Model has mongoose schema design and.
