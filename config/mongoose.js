@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/todo_list_db');
+mongoose.connect('mongodb+srv://Srinivas0025:kWMuH47A1ctXN9iQ@srinivasmaxbyte.yntrmrj.mongodb.net/?retryWrites=true&w=majority');
 const db = mongoose.connection;
 // error
 db.on('error',console.error.bind(console,'error connecting to db'));
